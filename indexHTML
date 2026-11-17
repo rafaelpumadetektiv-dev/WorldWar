@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World War 1914</title>
+
+    <link rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+    <div class="logo">WORLD WAR <span>1914</span></div>
+
+    <div class="resources">
+        <div>💰 Geld: <strong id="money">25000</strong></div>
+        <div>⚙ Stahl: <strong id="steel">500</strong></div>
+        <div>⛏ Kohle: <strong id="coal">500</strong></div>
+        <div>📅 <strong id="date">28.07.1914</strong></div>
+    </div>
+
+    <button id="pauseButton" onclick="togglePause()">
+        ⏸ Pause
+    </button>
+</header>
+
+<main class="game-layout">
+
+    <section class="map-section">
+        <div id="map"></div>
+
+        <div class="map-label">
+            HISTORISCHE WELTKARTE
+        </div>
+    </section>
+
+    <aside class="sidebar">
+
+        <h2>🏛 Länderverwaltung</h2>
+
+        <div class="country-box">
+            <h3 id="countryName">Deutschland</h3>
+            <p>Ausgewähltes Land</p>
+        </div>
+
+        <h3>🏭 Wirtschaft</h3>
+
+        <div class="stat">
+            Fabriken: <strong id="factories">5</strong>
+        </div>
+
+        <div class="stat">
+            Werften: <strong id="shipyards">2</strong>
+        </div>
+
+        <div class="stat">
+            Produktionslevel: <strong id="productionLevel">1</strong>
+        </div>
+
+        <button onclick="upgradeFactory()">
+            Fabrik verbessern – 2.000 $
+        </button>
+
+        <h3>⚓ Marine</h3>
+
+        <div class="stat">
+            Schlachtschiffe: <strong id="ships">0</strong>
+        </div>
+
+        <button onclick="buildShip()">
+            Schlachtschiff bauen – 5.000 $
+        </button>
+
+        <h3>✈ Luftfahrt</h3>
+
+        <div class="stat">
+            Flugzeuge: <strong id="planes">0</strong>
+        </div>
+
+        <button onclick="buildPlane()">
+            Flugzeug bauen – 1.500 $
+        </button>
+
+        <button class="warning" onclick="airOperation()">
+            Luftoperation starten
+        </button>
+
+        <h3>📊 Spielinformationen</h3>
+
+        <div id="log" class="log">
+            Willkommen im Jahr 1914.
+        </div>
+
+    </aside>
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/topojson-client@3"></script>
+<script type="module" src="game.js"></script>
+
+</body>
+</html>
